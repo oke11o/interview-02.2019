@@ -1,25 +1,40 @@
 <?php
 
-Class One
+interface Caller
+{
+    function callMe(): string;
+}
+
+class One implements Caller
 {
     function foo()
     {
-        echo "Hello from class One!";
+        return "One!";
     }
 
-    function callMe()
+    function callMe(): string
     {
-        $this->foo();
+        return $this->foo();
     }
 }
 
-Class Two extends One
+class Two extends One
 {
     function foo()
     {
-        echo "Hello from class Two";
+        return "Two";
     }
 }
 
-$Two = new two();
-$Two->callMe();
+function run(Caller $instance)
+{
+    echo $instance->callMe().PHP_EOL;
+}
+
+$two = new Two();
+$one = new One();
+
+run($two);
+run($one);
+
+
