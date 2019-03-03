@@ -4,13 +4,13 @@ interface MyInt
 {
     public function funcI();
 
-    private function funcP();
+    public function funcP();
 }
 
 class A
 {
-protected prop1;
-private prop2;
+protected $prop1;
+private $prop2;
 
     function funcA()
     {
@@ -20,7 +20,7 @@ private prop2;
 
 class B extends A
 {
-    function funcB()
+    function getProp1()
     {
         return $this->prop1;
     }
@@ -28,14 +28,19 @@ class B extends A
 
 class C extends B implements MyInt
 {
-    function funcB()
+    public function getProp1()
     {
         return $this->prop1;
     }
 
-    private function funcP()
+    function funcP()
     {
         return 123;
+    }
+
+    public function funcI()
+    {
+        // TODO: Implement funcI() method.
     }
 }
 
