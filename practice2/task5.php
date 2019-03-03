@@ -20,7 +20,7 @@ private $prop2;
 
 class B extends A
 {
-    function funcB()
+    function getProp1()
     {
         return $this->prop1;
     }
@@ -28,7 +28,7 @@ class B extends A
 
 class C extends B implements MyInt
 {
-    public function funcB()
+    public function getProp1()
     {
         return $this->prop1;
     }
