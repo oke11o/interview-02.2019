@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h2 class="h2">1. Что выведет alert(typeof NaN); ?</h2>
+        <div>Ответ:</div>
+        <pre id="result01" class="alert alert-success"></pre>
+        <script>
+            var result01 = typeof NaN
+            document.querySelector('#result01').innerHTML = result01
+        </script>
+    </div>
+
+
+    <div>
+        <h2 class="h2">2. Что выведет alert(NaN === NaN); ?</h2>
+        <div>Ответ:</div>
+        <pre id="result02" class="alert alert-success"></pre>
+        <script>
+            var result02 = NaN === NaN
+            document.querySelector('#result02').innerHTML = result02
+        </script>
+    </div>
+
+    <div>
+        <h2 class="h2">3. 0.1 + 0.2 == 0.3 ?</h2>
+        <div>Ответ:</div>
+        <pre id="result03" class="alert alert-success"></pre>
+        <script>
+            var result03 = 0.1 + 0.2
+            document.querySelector('#result03').innerHTML = result03
+        </script>
+    </div>
+
+    <div>
+        <h2 class="h2">4. Какой тип будет иметь переменная a, если она создается при помощи следующего кода:</h2>
+        <pre>
+        var a = "a,b".split(',');?
+        </pre>
+        <div>Ответ:</div>
+        <pre id="result04" class="alert alert-success"></pre>
+        <script>
+            var a = "a,b".split(',');
+            var result04 = typeof a;
+            if (Array.isArray(a)) {
+                result04 += " - isArray"
+            } else {
+                result04 += " - is not array"
+            }
+            document.querySelector('#result04').innerHTML = result04
+        </script>
+    </div>
+
+    <div>
+        <h2 class="h2">5. Сделать так, чтобы при нажатии на элемент а алертом выводилось «Hello world!».</h2>
+        <div><a href="#" id="link05">Вывести Hello world!</a></div>
+        <pre id="result05" class="alert alert-success"></pre>
+        <script>
+            document.querySelector('#link05').addEventListener('click', function (event) {
+                document.querySelector('#result05').innerHTML = 'Hello world!'
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>
