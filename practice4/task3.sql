@@ -1,0 +1,1 @@
+SELECT * FROM employee e WHERE e.salary>3800;
